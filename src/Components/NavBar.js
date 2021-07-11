@@ -41,14 +41,12 @@ const LoginButton = styled.button `
   color: #4CAF50;
   font-weight: bold;
   margin-right: 15px;
-  font-family: inherit;
   letter-spacing:0.5px;
   display: flex;
   align-items: center;
   transition-duration: .4s;
   &:hover {
     background-color: #eeeeee;
-    cursor: pointer;
     box-shadow: 8px 8px 15px rgb(55, 55, 55, 0.5);
     outline: none;
   }
@@ -68,12 +66,12 @@ const LoginIcon = styled.img `
 export const NavBar = () => (
     <NavBarStyled>
         <Logo>
-            <ImgLogo src={logoImg} alt="logo"/>
+            <ImgLogo src={logoImg} alt="лого"/>
             <H1>MrDonald's</H1>
         </Logo>
         <LoginButton>
             войти
-            <LoginIcon src={iconLogin}/>
+            <LoginIcon src={iconLogin} alt="войти"/>
         </LoginButton>
     </NavBarStyled>
 );
