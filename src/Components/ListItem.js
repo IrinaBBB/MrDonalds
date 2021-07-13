@@ -8,7 +8,7 @@ const List = styled.ul`
 `;
 const Item = styled.li`
     position: relative;
-    width: 400px;
+    width: 250px;
     height: 155px;
     background-image: ${({ img }) => `url(${img})`};
     background-position: center;

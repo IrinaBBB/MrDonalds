@@ -35,7 +35,7 @@ const ModalHeader = styled.div`
     justify-content: space-around;
 `;
 
-const OrderButton = styled.button`
+export const OrderButton = styled.button`
     background-color: #4caf50;
     border: none;
     color: white;
@@ -44,6 +44,8 @@ const OrderButton = styled.button`
     font-weight: bold;
     border-radius: 2px;
     margin-top: 40px;
+    transition-property: all;
+    transition-duration: 0.3s;
     &:hover {
         box-shadow: 8px 8px 15px rgb(55, 55, 55, 0.5);
         outline: none;
@@ -51,6 +53,14 @@ const OrderButton = styled.button`
     &:active {
         box-shadow: 1px 1px 10px rgb(55, 55, 55, 0.5);
     }
+`;
+
+const Content = styled.section`
+    display: flex;
+    height: 350px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
 `;
 
 export const ModalItem = ({ openItem, setOpenItem }) => {
@@ -66,16 +76,18 @@ export const ModalItem = ({ openItem, setOpenItem }) => {
         <Overlay id="overlay" onClick={closeModal}>
             <Modal>
                 <Banner img={openItem.img} />
-                <ModalHeader>
-                    <h3>{openItem.name}</h3>
-                    <h3>
-                        {openItem.price.toLocaleString('ru-RU', {
-                            style: 'currency',
-                            currency: 'RUB',
-                        })}
-                    </h3>
-                </ModalHeader>
-                <OrderButton>Заказать</OrderButton>
+                <Content>
+                    <ModalHeader>
+                        <h3>{openItem.name}</h3>
+                        <h3>
+                            {openItem.price.toLocaleString('ru-RU', {
+                                style: 'currency',
+                                currency: 'RUB',
+                            })}
+                        </h3>
+                    </ModalHeader>
+                    <OrderButton>Заказать</OrderButton>
+                </Content>
             </Modal>
         </Overlay>
     );
