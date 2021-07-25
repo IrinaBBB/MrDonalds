@@ -6,6 +6,7 @@ const List = styled.ul`
     justify-content: space-around;
     flex-wrap: wrap;
 `;
+
 const Item = styled.li`
     position: relative;
     width: 250px;
